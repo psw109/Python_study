@@ -66,6 +66,12 @@ class SquareTest(unittest.TestCase):
         expected = np.array(4.0)
         self.assertEqual(y.data, expected)
 
+    def test_backward(self):
+        x = Variable(np.array(3.0))
+        y = square(x)
+        y.backward()
+        expected = np.array(6.0)
+
 
 """
 터미널에서 step10.py 스크립트 실행후 확인
